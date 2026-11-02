@@ -12,6 +12,14 @@ A desktop assistant for live interviews. It listens to the interviewer (system a
 - **Context**: paste or upload your CV (`.pdf`, `.docx`, `.txt`) and fill in the job description and extra position context. All of it is added to every prompt. Everything on the main page persists between runs.
 - **Local transcription**: whisper.cpp and the `base.en` model are bundled in the release builds. Nothing but the transcript text leaves your machine, and it only goes to Anthropic.
 
+## Screenshots
+
+Demo data (fictional CV and job description).
+
+| Main window (config) | Floating answer window |
+|---|---|
+| <img src="docs/images/main-window.png" width="420"> | <img src="docs/images/answer-window.png" width="420"> |
+
 ## Usage
 
 Download the latest build from the [releases](../../releases): `.dmg` for macOS (Apple Silicon) or `-setup.exe` for Windows (x64). Builds are unsigned: on macOS right-click → Open (or `xattr -cr ainterview.app`), on Windows choose "More info → Run anyway".
