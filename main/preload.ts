@@ -13,8 +13,16 @@ const handler = {
       ipcRenderer.removeListener(channel, subscription)
     }
   },
+  invoke(channel: string, value?: unknown) {
+    return ipcRenderer.invoke(channel, value)
+  },
 }
 
 contextBridge.exposeInMainWorld('ipc', handler)
 
 export type IpcHandler = typeof handler
+
+contextBridge.exposeInMainWorld('electronAPI', {
+  enableLoopbackAudio: () => ipcRenderer.invoke('enable-loopback-audio'),
+  disableLoopbackAudio: () => ipcRenderer.invoke('disable-loopback-audio'),
+})

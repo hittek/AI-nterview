@@ -11,3 +11,7 @@ next-env.d.ts
 # build
 /app
 dist
+
+# bundled whisper model/binary (large)
+resources/whisper/
+*.tsbuildinfo

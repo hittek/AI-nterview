@@ -9,4 +9,25 @@ files:
     filter:
       - package.json
       - app
+extraResources:
+  - from: resources/whisper
+    to: whisper
+    filter:
+      - ggml-base.en.bin
 publish: null
+
+mac:
+  extraResources:
+    - from: resources/whisper/mac
+      to: whisper
+  extendInfo:
+    NSAudioCaptureUsageDescription: Capture the interviewer audio
+    NSMicrophoneUsageDescription: Capture your microphone
+
+win:
+  target:
+    - target: nsis
+      arch: x64
+  extraResources:
+    - from: resources/whisper/win
+      to: whisper
