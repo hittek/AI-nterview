@@ -1,0 +1,32 @@
+{
+  "title": "AInterview 2-key pad",
+  "rules": [
+    {
+      "description": "2-key pad: page_up=start capture, page_down=stop capture, both=screenshot",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [{ "key_code": "page_up" }, { "key_code": "page_down" }],
+            "simultaneous_options": { "key_down_order": "insensitive" }
+          },
+          "to": [{ "key_code": "9", "modifiers": ["left_command", "left_shift"] }],
+          "parameters": { "basic.simultaneous_threshold_milliseconds": 150 },
+          "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 20812, "product_id": 34897 }] }]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "page_up" },
+          "to": [{ "key_code": "7", "modifiers": ["left_command", "left_shift"] }],
+          "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 20812, "product_id": 34897 }] }]
+        },
+        {
+          "type": "basic",
+          "from": { "key_code": "page_down" },
+          "to": [{ "key_code": "8", "modifiers": ["left_command", "left_shift"] }],
+          "conditions": [{ "type": "device_if", "identifiers": [{ "vendor_id": 20812, "product_id": 34897 }] }]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 <p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
 
+> [!WARNING]
+> **Disclaimer: experimental use only.** This project is a proof of concept for learning and experimentation. It is **not intended for use in real job interviews**. Using AI assistance where it is prohibited can violate an employer's or interviewer's rules, be unfair to other candidates, and may cost you an opportunity. You are solely responsible for how you use it. Practice and mock interviews are the intended use.
+
 ## What it does
 
 A desktop assistant for live interviews. It listens to the interviewer (system audio, e.g. Zoom) and to you (mic), transcribes locally with whisper.cpp, and asks Claude for an answer. It can also answer from a screenshot of the current question.
@@ -53,3 +56,9 @@ npx nextron build --win --x64
 ```
 
 Each build wipes `dist/`, so copy the first artifact out before running the second.
+
+## Docs
+
+- [Architecture and internals](docs/architecture.md)
+- [External 2-key pad / keybindings](docs/external-keyboard.md)
+- [AGENTS.md](AGENTS.md): guidance for AI agents configuring or troubleshooting the app
